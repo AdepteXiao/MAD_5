@@ -19,7 +19,7 @@ def c_plots(est, name, clfs, x_tr, y_tr, x_te, y_te):
     best_scores = {}
 
     for ax, (clf_name, clf) in zip(axs.flatten(), clfs.items()):
-        n_range = range(1, 100)
+        n_range = range(5, 100)
         train_vals = []
         test_vals = []
         for i in n_range:
@@ -38,8 +38,7 @@ def c_plots(est, name, clfs, x_tr, y_tr, x_te, y_te):
         ax.legend()
     best_score = max(best_scores.values())
     rev_dict = {v: k for k, v in best_scores.items()}
-    key = rev_dict[best_score]
-    return best_scores[key], best_score
+    return rev_dict[best_score], best_score
 
 
 def r_plots(est, name, clfs, x_tr, y_tr, x_te, y_te):
@@ -48,7 +47,7 @@ def r_plots(est, name, clfs, x_tr, y_tr, x_te, y_te):
     best_scores = {}
 
     for ax, (clf_name, clf) in zip(axs.flatten(), clfs.items()):
-        n_range = range(1, 100)
+        n_range = range(5, 100)
         train_vals = []
         test_vals = []
         for i in n_range:
@@ -67,8 +66,7 @@ def r_plots(est, name, clfs, x_tr, y_tr, x_te, y_te):
         ax.legend()
     best_score = max(best_scores.values())
     rev_dict = {v: k for k, v in best_scores.items()}
-    key = rev_dict[best_score]
-    return best_scores[key], best_score
+    return rev_dict[best_score], best_score
 
 
 
